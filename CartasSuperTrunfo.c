@@ -17,36 +17,36 @@ struct Carta carta1, carta2; // Array que armazena 2 cartas
 printf ("Informações da Cidade CARTA 1 \n\n");
 
 printf ("Informe a letra que representa seu estado de A à H: ");
-scanf ("%c", &carta1.estado);
+scanf (" %c", &carta1.estado);
 printf ("Informe a letra do seu estado seguida de 2 numeros entre 01 e 04: ");
-scanf ("%s", &carta1.codigo);
+scanf (" %s", carta1.codigo);
 printf ("Informe o nome da sua cidade: ");
-scanf ("%s", &carta1.nomeCidade);
+scanf (" %s", carta1.nomeCidade);
 printf ("Qual o número de habitantes na sua cidade: ");
-scanf ("%d", &carta1.populacao);
+scanf (" %d", &carta1.populacao);
 printf ("Qual a área (em km²): ");
-scanf ("%f", &carta1.area);
+scanf (" %f", &carta1.area);
 printf ("Qual o pib: ");
-scanf ("%f", &carta1.pib);
+scanf (" %f", &carta1.pib);
 printf ("Qual a quantidade de pontos turisticos da região: ");
-scanf ("%d", &carta1.pontosTuristicos);
+scanf (" %d", &carta1.pontosTuristicos);
 ;
 // requisitando informações para a carta 2, e adicionando os valores nas variaveis criadas.
 printf ("\n\nInformações da Cidade CARTA 2 \n\n");
 printf ("Informe a letra que representa seu estado de A à H: ");
 scanf (" %c", &carta2.estado); 
 printf ("Informe a letra do seu estado seguida de 2 numeros entre 01 e 04: ");
-scanf ("%s", &carta2.codigo);
+scanf (" %s", carta2.codigo);
 printf ("Informe o nome da sua cidade: ");
-scanf ("%s", &carta2.nomeCidade);
+scanf (" %s", carta2.nomeCidade);
 printf ("Qual o número de habitantes na sua cidade: ");
-scanf ("%d", &carta2.populacao);
+scanf (" %d", &carta2.populacao);
 printf ("Qual a área (em km²): ");
-scanf ("%f", &carta2.area);
+scanf (" %f", &carta2.area);
 printf ("Qual o pib: ");
-scanf ("%f", &carta2.pib);
+scanf (" %f", &carta2.pib);
 printf ("Qual a quantidade de pontos turisticos da região: ");
-scanf ("%d", &carta2.pontosTuristicos);
+scanf (" %d", &carta2.pontosTuristicos);
 
 // Mostrando os valores da carta 1 e 2 conforme solicitado noe exercicio.
 printf("\n\n Carta 1 \n"
