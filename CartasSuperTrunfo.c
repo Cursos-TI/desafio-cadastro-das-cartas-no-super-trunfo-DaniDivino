@@ -12,8 +12,12 @@ struct Carta { // Estrutura para armazenar as informações de uma carta
     int pontosTuristicos;
     float densidade; // adicionado novas variaveis <= aventuteiro
     float perCapita; // adicionado novas variaveis <= aventuteiro
+    float pontoDensidade; // Criada para ponto negativo da densidade => mestre
 };
 struct Carta carta1, carta2; // Array que armazena 2 cartas
+
+carta1.pontoDensidade = 0; // Atribuindo valor inicial para a lógica de ponto para menor densidade
+carta2.pontoDensidade = 0;
 
 // requisitando informações para a carta 1, e adicionando os valores nas variaveis criadas.
 printf ("Informações da Cidade CARTA 1 \n\n");
@@ -79,6 +83,60 @@ printf("Carta 2 \n"
        "PIB per Capita: %.2f \n" // Impressão dos novos valores <= aventuteiro
        "Densidade Populacional: %.2f \n ", carta2.estado,carta2.codigo,carta2.nomeCidade,carta2.populacao, // Impressão dos novos valores <= aventuteiro
                                               carta2.area,carta2.pib,carta2.pontosTuristicos, carta2.perCapita,carta2.densidade);
+ 
+ // Lógica Condicional para comparação de valores e cartas 1 e 2 <= Mestre
+printf("Comparação de Cartas\n");
+
+if (carta1.populacao > carta2.populacao) { // Se a carta 1 for maior que a carta 2 <= Mestre
+    printf("População: Carta 1 Venceu\n");
+} else {
+    printf("População: Carta 2 Venceu\n");
+}
+
+if (carta1.area > carta2.area) {
+    printf("Área: Carta 1 Venceu\n");
+} else {
+    printf("Área: Carta 2 Venceu\n");
+}
+
+if (carta1.pib > carta2.pib) {
+    printf("PIB: Carta 1 Venceu\n");
+} else {
+    printf("PIB: Carta 2 Venceu\n");
+}
+
+if (carta1.pontosTuristicos > carta2.pontosTuristicos) {
+    printf("Pontos Turísticos: Carta 1 Venceu\n");
+} else {
+    printf("Pontos Turísticos: Carta 2 Venceu\n");
+}
+
+if (carta1.densidade < carta2.densidade) {
+    carta1.pontoDensidade = 1; // Ponto para a menor densidade para carta 1
+    printf("Densidade Populacional: Carta 1 Venceu\n");
+} else {
+    carta2.pontoDensidade = 1; // Ponto para a menor densidade para carta 2
+    printf("Densidade Populacional: Carta 2 Venceu\n");
+}
+
+if (carta1.perCapita > carta2.perCapita) {
+    printf("PIB per Capita: Carta 1 Venceu\n");
+} else {
+    printf("PIB per Capita: Carta 2 Venceu\n");
+}
+
+ /* Lógica Condicional para comparação do super poder e já mostrar o resultado <= Mestre */
+float superTrunfo1 = carta1.populacao + carta1.area + carta1.pib +
+                carta1.pontosTuristicos + carta1.pontoDensidade + carta1.perCapita;
+
+float superTrunfo2 = carta2.populacao + carta2.area + carta2.pib +
+                carta2.pontosTuristicos + carta2.pontoDensidade + carta2.perCapita;
+
+if (superTrunfo1 > superTrunfo2) {
+    printf("Super Poder: Carta 1 venceu. (%d)\n",carta1.pontoDensidade);
+} else {
+    printf("Super Poder: Carta 2 venceu.(%d)\n",carta2.pontoDensidade);
+}
 return 0;
 
 }
